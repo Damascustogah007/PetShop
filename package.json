@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cypress:run": "cypress run --browser chrome"
+    "cypress:run": "cypress run --browser chrome",
+    "cypress:open" : "cypress open --e2e --browser chrome"
   },
   "author": "charles togah",
   "license": "ISC",
