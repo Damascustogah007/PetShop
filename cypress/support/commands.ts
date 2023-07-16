@@ -44,6 +44,35 @@ Cypress.Commands.add('loginWithInvalidCredential', (email, password) => {
     });
 });
 
+Cypress.Commands.add('addNewCustomer', (
+    firstName,
+    lastName,
+    phone,
+    location,
+    password,
+    confirmPassword
+) => {
+    const d = new Date();
+    let email = `Mateo.Blažević${d.getSeconds()}@gmail.com`
+    cy.contains('Customers').click();
+    cy.get('.table-header__content').children().eq(1).click()
+    cy.get('.text-h5').eq(1).then((value) => {
+        const addNewCustomerHeader = value.text();
+        cy.wrap(value).should('contain.text', addNewCustomerHeader);
+    });
+    cy.get('.v-input__control').eq(5).type(firstName);
+    cy.get('.v-input__control').eq(6).type(lastName);
+    cy.get('.v-input__control').eq(7).type(email);
+    cy.get('.v-input__control').eq(8).type(phone);
+    cy.get('.v-input__control').eq(9).type(location);
+    cy.get('.v-input__control').eq(10).type(password)
+    cy.get('.v-input__control').eq(11).type(confirmPassword);
+    cy.get('.v-btn__underlay').eq(7).scrollIntoView().click({ force: true });
+    cy.get('.cursor-pointer').eq(1).click();
+    //Verify if record exit in the table by the unique identifier "email"
+    cy.contains(email).should('be.visible').and('exist');
+});
+
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })

@@ -1,0 +1,8 @@
+{
+   "firstName" : "Mateo",
+    "lastName" : "Blažević",
+    "phone": "+385 99 072 4179", 
+    "location" : "Podokićka 16 10251 Hrvatski Leskovac, Beli Manastir,Croatia",
+    "password": "admin123",
+    "confirmPassword" : "admin123"
+}
