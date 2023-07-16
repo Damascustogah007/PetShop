@@ -33,6 +33,17 @@ Cypress.Commands.add('loginWithValidCredential', (email, password) => {
     });
 });
 
+Cypress.Commands.add('loginWithInvalidCredential', (email, password) => {
+    cy.visit('/Login');
+    cy.get('#input-0').type(email);
+    cy.get('#input-2').type(password);
+    cy.get('.v-btn').click();
+    cy.get('.text-red').then((error) => {
+        const redText = error.text();
+        cy.wrap(error).should('contain.text', redText);
+    });
+});
+
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
