@@ -1,4 +1,13 @@
 {
+  "name": "buckhill",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:run": "cypress run --browser chrome"
+  },
+  "author": "charles togah",
+  "license": "ISC",
   "devDependencies": {
     "cypress": "^12.7.0",
     "typescript": "^5.1.6"
