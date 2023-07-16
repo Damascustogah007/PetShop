@@ -71,6 +71,7 @@ Cypress.Commands.add('addNewCustomer', (
     cy.get('.cursor-pointer').eq(1).click();
     //Verify if record exit in the table by the unique identifier "email"
     cy.contains(email).should('be.visible').and('exist');
+    cy.url().should('include', '/dashboard/customers');
 });
 
 //

@@ -2,12 +2,16 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   e2e: {
-    baseUrl : 'https://pet-shop.buckhill.com.hr',
+    baseUrl: 'https://pet-shop.buckhill.com.hr',
     env: {
-      username : 'admin@buckhill.co.uk',
-      password : 'admin',
+      username: 'admin@buckhill.co.uk',
+      password: 'admin',
       invalid_username: 'admin@buckhill.co.uk123',
       invalid_password: 'admin123',
+    },
+    "retries": {
+      runMode: 2,
+      openMode: 2
     },
     setupNodeEvents(on, config) {
       // implement node event listeners here
