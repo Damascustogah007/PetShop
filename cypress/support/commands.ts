@@ -74,6 +74,49 @@ Cypress.Commands.add('addNewCustomer', (
     cy.url().should('include', '/dashboard/customers');
 });
 
+Cypress.Commands.add('signInAndLogInUser', (
+    firstName,
+    lastName,
+    phone,
+    location,
+    password,
+    confirmPassword
+) => {
+    //Sign up customer
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    let email = `Maclean.Blažević${randomNumber}@gmail.com`
+    cy.contains('LOGIN').click();
+    cy.contains("Don't have an account? Sign up").click()
+    cy.get('.text-h5').then((value) => {
+        const signUpHeader = value.text();
+        cy.wrap(value).should('contain.text', signUpHeader);
+    });
+    cy.get('.v-input__control').eq(1).type(firstName);
+    cy.get('.v-input__control').eq(2).type(lastName);
+    cy.get('.v-input__control').eq(3).type(email);
+    cy.get('.v-input__control').eq(4).type(phone);
+    cy.get('.v-input__control').eq(5).type(location);
+    cy.get('.v-input__control').eq(6).type(password);
+    cy.get('.v-input__control').eq(7).type(confirmPassword);
+    cy.get('.v-selection-control__input').click();
+    cy.get('.v-btn__underlay').eq(9).scrollIntoView().click({ force: true });
+
+    //log in customer
+    cy.contains('LOGIN').click();
+    cy.get('.v-input__control').eq(1).type(email);
+    cy.get('.v-input__control').eq(2).type(password);
+    cy.contains('Log in').click();
+
+    //verify logged in user
+    cy.contains('LOGOUT').should('be.visible');
+    cy.get('.v-avatar').children().eq(0).click();
+    cy.get('.settings').should('be.visible').and('exist');
+    cy.contains(firstName).should('be.visible');
+    cy.contains(lastName).should('be.visible');
+    cy.contains(phone).should('be.visible');
+    cy.contains(email).should('be.visible');
+});
+
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
