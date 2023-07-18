@@ -1,8 +1,15 @@
 # PetShop
 Online store for pets (QA Automation Task)
 
+### Create folder
+Create a folder on your desktop
+
+### Open folder in vscode
+In vscode, open the folder you created on desktop
+
 ### Clone repository
 
+Note: Make sure to clone the repository into the folder you created.  
 To clone repository from vscode terminal, run the following command.
 
 ```
@@ -32,6 +39,7 @@ To open cypress headless, run the following command:
 ```
 npm run cypress:run
 ```
+Note: If you run cypress in headless mode, after running the codes cypress automatically creates a "Video" folder inside the "cypress" folder. There you can find videos to the spec files that was executed.
 
 ### Open cypress in headed mode (optional)
 
@@ -41,7 +49,11 @@ To open cypress headed, run the following command:
 npm run cypress:open
 ```
 
-**Note**: All test scripts has been configured to run on chrome browser
+**Note**: 
+1. All test scripts has been configured to run on chrome browser
+2. Ensure you have strong internet connection to avoid test script from failing.
+3. If paradvenure test scripts fails, please run the script again. Failed scripts deserve one more chance too.
+
 
 ### To download test cases
 To download the test cases, follow these steps:
@@ -54,5 +66,5 @@ To download the test cases, follow these steps:
 ![downloadtest](test.PNG)
 7. Repeat step 1 - 6 for download user-journey test case
 
-**Note** : There are a total of 4 test case for both admin-journey and user-journey.
+**Note** : There are a total of 4 test case for both admin-journey and user-journey in the "test_cases" folder.
 
