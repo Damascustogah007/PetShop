@@ -52,8 +52,6 @@ npm run cypress:open
 **Note**: 
 1. All test scripts has been configured to run on chrome browser
 2. Ensure you have strong internet connection to avoid test script from failing.
-3. If paradvenure test scripts fails, please run the script again. Failed scripts deserve one more chance too.
-
 
 ### To download test cases
 To download the test cases, follow these steps:
