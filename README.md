@@ -1,6 +1,22 @@
 # PetShop
 Online store for pets (QA Automation Task)
 
+### Where to find the spec files codes
+1. Inside the PetShop folder
+2. Open the cypress folder
+3. navigate to e2e > admin-journey > addNewCusomer-functionality > add-new-customer.cy.ts
+4. navigate to e2e > admin-journey > login-functionality > login-with-invalid-credentails.cy.ts and login-with-valid-credentails.cy.ts
+5. Also, in the e2e > user-journey > login-functionality > login.cy.ts
+
+### Where to find fixture file
+1. Inside the cypress folder > fixtures > addNewCustomer.json
+
+### Where to reuseable cypress commands
+1. Inside the cypress folder > support > command.ts
+
+### Where to find cypress config file
+1. Inside the PetShop folder > cypress.config.ts
+
 ### Create folder
 Create a folder on your desktop
 
@@ -55,7 +71,7 @@ npm run cypress:open
 
 ### To download test cases
 To download the test cases, follow these steps:
-1. Navigate to this url https://github.com/Damascustogah007/PetShop/tree/main/test_cases
+1. Navigate to PetShop folder > test_cases
 2. Click on the **admin-journey** folder 
 3. click on the **addNewCustomer_functionality** folder
 4. click on the **add_new_customer.docx** file
